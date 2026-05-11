@@ -20,4 +20,3 @@ env/
 
 # Temporary files from DASH validation
 *.mpd.tmp
-manifest-validator-webapp/
