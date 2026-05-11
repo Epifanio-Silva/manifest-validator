@@ -22,7 +22,7 @@ A command-line tool for validating **HLS** (`.m3u8`) and **DASH** (`.mpd`) strea
 | Stream | Format | HTML Report | CSV |
 |--------|--------|-------------|-----|
 | [Tears of Steel](https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8) | HLS | [View report](https://htmlpreview.github.io/?https://github.com/Epifanio-Silva/manifest-validator/blob/main/examples/hls_example.html) | [hls_example.csv](examples/hls_example.csv) |
-| [Big Buck Bunny](https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd) | DASH | [View report](https://htmlpreview.github.io/?https://github.com/Epifanio-Silva/manifest-validator/blob/main/examples/dash_example.html) | [dash_example.csv](examples/dash_example.csv) |
+| CMAF Live Stream | DASH | [View report](https://htmlpreview.github.io/?https://github.com/Epifanio-Silva/manifest-validator/blob/main/examples/dash_example.html) | [dash_example.csv](examples/dash_example.csv) |
 
 ---
 
