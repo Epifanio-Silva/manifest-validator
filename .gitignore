@@ -1,0 +1,23 @@
+# Reports output directory
+reports/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files from DASH validation
+*.mpd.tmp
+manifest-validator-webapp/
