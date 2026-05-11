@@ -317,8 +317,12 @@ class DashValidator:
             nsmap['ns'] = 'urn:mpeg:dash:schema:mpd:2011'
 
         base_url = root.findtext('.//ns:BaseURL', namespaces=self.nsmap)
+        mpd_base = re.sub(r'/(?:[^/]+)$', '/', self.FINAL_URL)
         if not base_url:
-            base_url = re.sub(r'/(?:[^/]+)$', '/', self.FINAL_URL)
+            base_url = mpd_base
+        elif not base_url.startswith(('http://', 'https://')):
+            # Relative BaseURL — resolve against the MPD's own URL
+            base_url = urljoin(mpd_base, base_url)
         if not base_url.endswith('/'):
             base_url += '/'
         self.BASE_URL = base_url
