@@ -502,6 +502,7 @@ class DashValidator:
         return 'Unknown Segment Type'
 
     def download_and_validate_segment(self, url: str, segment_path: Path) -> Tuple[Optional[int], str]:
+        segment_path.parent.mkdir(parents=True, exist_ok=True)
         status_code, _ = download_file(url, segment_path)
         if status_code == 200 and segment_path.is_file() and segment_path.stat().st_size > 0:
             segment_type = self.validate_media_segment(segment_path)
@@ -616,6 +617,7 @@ class DashValidator:
                                     .replace('$Bandwidth$', bandwidth))
                         full_init_url = urljoin(self.BASE_URL, init_url)
                         init_segment_path = Path(self.temp_dir.name) / f'init_{rep_id}.mp4'
+                        init_segment_path.parent.mkdir(parents=True, exist_ok=True)
 
                         logger.info(f'Downloading Initialization Segment: {full_init_url}')
                         init_status_code, _ = download_file(full_init_url, init_segment_path)
